@@ -26,7 +26,7 @@ resource "azurerm_virtual_network" "main" {
 
 # Create Frontend Subnet
 resource "azurerm_subnet" "frontend" {
-  name                 = "frontend"
+  name                 = var.frontend_subnet_name
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.0.1.0/24"]
@@ -34,7 +34,7 @@ resource "azurerm_subnet" "frontend" {
 
 # Create Backend Subnet
 resource "azurerm_subnet" "backend" {
-  name                 = "backend"
+  name                 = var.backend_subnet_name
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.0.2.0/24"]
