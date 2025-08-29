@@ -30,6 +30,6 @@ variable "frontend_subnet_name" {
 }
 
 variable "backend_subnet_name" {
-  description = "Name of the backend subnet"  
+  description = "Name of the backend subnet"
   type        = string
 }
